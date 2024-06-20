@@ -6,5 +6,5 @@ import java.util.Optional;
 
 public interface AuthorDao {
 
-    Optional<Author> findAuthorByBookIsbn(String isbn);
+    Optional<Author> getAuthorByBookIsbn(String isbn);
 }

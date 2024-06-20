@@ -4,9 +4,11 @@ import com.aga.spring_jdbc.daos.AuthorDao;
 import com.aga.spring_jdbc.domain.Author;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
 public class AuthorDaoImpl implements AuthorDao {
 
     private final JdbcTemplate jdbcTemplate;
@@ -16,7 +18,7 @@ public class AuthorDaoImpl implements AuthorDao {
     }
 
     @Override
-    public Optional<Author> findAuthorByBookIsbn(String isbn) {
+    public Optional<Author> getAuthorByBookIsbn(String isbn) {
         final SqlRowSet result = jdbcTemplate.queryForRowSet(
                 "select a.id as id, a.name as name, a.age as age "+
                         "from authors a JOIN books b ON b.author_id = a.id " +
