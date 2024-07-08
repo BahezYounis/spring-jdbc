@@ -20,8 +20,8 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @GetMapping(path = "/books")
-    public ResponseEntity<List<Book>> listBooks() {
-        return new ResponseEntity<List<Book>>(bookService.getBooks(), HttpStatus.OK);
-    }
+//    @GetMapping(path = "/books")
+//    public ResponseEntity<List<Book>> listBooks() {
+//        return new ResponseEntity<List<Book>>(bookService.getBooks(), HttpStatus.OK);
+//    }
 }

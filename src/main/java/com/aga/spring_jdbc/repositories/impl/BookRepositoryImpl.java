@@ -22,12 +22,12 @@ public class BookRepositoryImpl implements BookRepository {
         this.bookDao = bookDao;
         this.authorDao = authorDao;
     }
-    @Override
-    public List<Book> listBooks() {
-         return bookDao.listBooks().stream().map( book -> {
-            final Author author = authorDao.getAuthorByBookIsbn(book.getIsbn()).orElse(null);
-            book.setAuthor(author);
-            return book;
-        }).collect(Collectors.toList());
-    }
+//    @Override
+//    public List<Book> listBooks() {
+//         return bookDao.listBooks().stream().map( book -> {
+//            final Author author = authorDao.getAuthorByBookIsbn(book.getIsbn()).orElse(null);
+//            book.setAuthor(author);
+//            return book;
+//        }).collect(Collectors.toList());
+//    }
 }
